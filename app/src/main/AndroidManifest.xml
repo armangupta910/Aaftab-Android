@@ -53,7 +53,7 @@
             android:name=".beginOptionPage"
             android:exported="false" />
         <activity
-            android:name=".beginPage"
+            android:name=".getStarted"
             android:exported="false" />
         <activity
             android:name=".poseActivity"
@@ -61,7 +61,7 @@
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".getStarted"
+            android:name=".beginPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -24,15 +24,15 @@ class DotIndicatorAdapter(private val itemCount: Int) :
         if (position == selectedIndex) {
             holder.dot.setImageResource(R.drawable.dot_selected)
 
-            val dpSizeInPixels1 = dpToPixels(context, 10) // 12dp, adjust as needed
-            val dpSizeInPixels2 = dpToPixels(context,10)
+            val dpSizeInPixels1 = dpToPixels(context, 7) // 12dp, adjust as needed
+            val dpSizeInPixels2 = dpToPixels(context,14)
             val layoutParams = holder.dot.layoutParams
             layoutParams.width = dpSizeInPixels2
-            layoutParams.height = dpSizeInPixels2
+            layoutParams.height = dpSizeInPixels1
             holder.dot.layoutParams = layoutParams
         } else {
             holder.dot.setImageResource(R.drawable.dot_unselected)
-            val dpSizeInPixels = dpToPixels(context, 8) // 12dp, adjust as needed
+            val dpSizeInPixels = dpToPixels(context, 7) // 12dp, adjust as needed
             val layoutParams = holder.dot.layoutParams
             layoutParams.width = dpSizeInPixels
             layoutParams.height = dpSizeInPixels

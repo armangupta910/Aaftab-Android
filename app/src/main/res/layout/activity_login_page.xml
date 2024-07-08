@@ -9,7 +9,17 @@
     android:background="@color/color4"
     tools:context=".loginPage">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
     <ImageView
+        android:id="@+id/goBackImage"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@drawable/goback"
@@ -29,21 +39,21 @@
         android:layout_width="match_parent"
         android:layout_marginRight="60dp"
         android:layout_marginLeft="60dp"
-        android:layout_height="250dp"
+        android:layout_height="300dp"
         >
         <ImageView
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:src="@drawable/beginimagebelow"/>
 
         <ImageView
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="400dp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/optionpageimage"/>
 
@@ -74,9 +84,10 @@
             android:text="Email"
             android:textStyle="bold"/>
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <EditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="39dp"
             android:layout_marginLeft="60dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="60dp"
@@ -94,15 +105,17 @@
             android:layout_height="wrap_content"
             android:text="Password"
             android:textStyle="bold"/>
-        <androidx.appcompat.widget.AppCompatEditText
+        <EditText
+            android:id="@+id/password"
             android:textSize="13dp"
             android:layout_marginTop="5dp"
             android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="39dp"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="60dp"
             android:background="@drawable/roundbuttonbglogin"
+            android:drawableEnd="@drawable/show_password_resized"
             android:layout_marginBottom="5dp"
             android:hint="Password"
             android:padding="10dp"/>
@@ -118,8 +131,9 @@
             android:textStyle="bold"/>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signin"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="40dp"
             android:text="Sign in"
             android:background="@drawable/roundbuttonbgregister"
             android:textColor="@color/white"
@@ -137,6 +151,7 @@
             android:layout_marginTop="20dp" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/googleSignIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/white"
@@ -171,11 +186,12 @@
                 android:text="Don't have an account?"/>
 
             <TextView
+                android:id="@+id/gotoSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:text="Sign up"/>
+                android:text=" Sign up"/>
 
 
 
@@ -187,5 +203,9 @@
 
 
     </LinearLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

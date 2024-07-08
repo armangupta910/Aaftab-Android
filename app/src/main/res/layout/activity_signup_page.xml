@@ -9,7 +9,17 @@
     android:background="@color/color4"
     tools:context=".loginPage">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
     <ImageView
+        android:id="@+id/goBackImage"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@drawable/goback"
@@ -29,21 +39,21 @@
         android:layout_width="match_parent"
         android:layout_marginRight="60dp"
         android:layout_marginLeft="60dp"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         >
         <ImageView
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:src="@drawable/beginimagebelow"/>
 
         <ImageView
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="00dp"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="250dp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/optionpageimage"/>
 
@@ -74,17 +84,24 @@
             android:text="Name"
             android:textStyle="bold"/>
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="60dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/roundbuttonbglogin"
-            android:hint="Name"
-            android:padding="10dp"
-            android:textSize="13dp" />
+
+
+            <EditText
+                android:background="@drawable/roundbuttonbglogin"
+                android:textColor="@color/black"
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="60dp"
+                android:textSize="13dp"
+                android:hint="Name"
+                android:layout_marginRight="60dp"
+                android:layout_marginBottom="5dp"
+
+                android:paddingLeft="15dp"
+                />
+
 
         <TextView
             android:textSize="13dp"
@@ -94,18 +111,21 @@
             android:layout_height="wrap_content"
             android:text="Email"
             android:textStyle="bold"/>
-        <androidx.appcompat.widget.AppCompatEditText
-            android:textSize="13dp"
-            android:layout_marginTop="5dp"
-            android:inputType="textPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
-            android:background="@drawable/roundbuttonbglogin"
-            android:layout_marginBottom="5dp"
-            android:hint="Email"
-            android:padding="10dp"/>
+
+            <EditText
+                android:background="@drawable/roundbuttonbglogin"
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:hint="username@gmail.com"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="60dp"
+                android:textSize="13dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="15dp"
+                />
+
         <TextView
             android:textSize="13dp"
             android:layout_marginLeft="60dp"
@@ -114,18 +134,24 @@
             android:layout_height="wrap_content"
             android:text="Gender"
             android:textStyle="bold"/>
-        <androidx.appcompat.widget.AppCompatEditText
-            android:textSize="13dp"
-            android:layout_marginTop="5dp"
-            android:inputType="textPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
-            android:background="@drawable/roundbuttonbglogin"
-            android:layout_marginBottom="5dp"
-            android:hint="Gender"
-            android:padding="10dp"/>
+
+            <AutoCompleteTextView
+                android:background="@drawable/roundbuttonbglogin"
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:hint="Gender"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="60dp"
+                android:textSize="13dp"
+                android:drawableEnd="@drawable/custom_show_password"
+                android:layout_marginRight="60dp"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:inputType="none"
+                />
+
         <TextView
             android:textSize="13dp"
             android:layout_marginLeft="60dp"
@@ -134,22 +160,29 @@
             android:layout_height="wrap_content"
             android:text="Create Password"
             android:textStyle="bold"/>
-        <androidx.appcompat.widget.AppCompatEditText
-            android:textSize="13dp"
-            android:layout_marginTop="5dp"
-            android:inputType="textPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
-            android:background="@drawable/roundbuttonbglogin"
-            android:layout_marginBottom="5dp"
-            android:hint="Create Password"
-            android:padding="10dp"/>
+
+            <EditText
+                android:background="@drawable/roundbuttonbglogin"
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:hint="Password"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="60dp"
+                android:textSize="13dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginBottom="20dp"
+                android:inputType="textPassword"
+                android:drawableEnd="@drawable/show_password_resized"
+                android:paddingRight="10dp"
+                android:paddingLeft="15dp"
+                />
+
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/register"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="40dp"
             android:text="Register"
             android:background="@drawable/roundbuttonbgregister"
             android:textColor="@color/white"
@@ -160,20 +193,63 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Back to Login Page"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:text="Or Continue With"
             android:textAlignment="center"
-            android:layout_marginTop="30dp"/>
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/googleSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="8dp">
+
+            <ImageView
+                android:layout_marginRight="0dp"
+                android:layout_width="45dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:paddingTop="7.5dp"
+                android:paddingBottom="7.5dp"
+
+                android:layout_height="35dp"
+                android:src="@drawable/google"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Already have an account?"/>
+
+            <TextView
+                android:id="@+id/gotoSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text=" Sign In"/>
 
 
 
-
-
-
-
-
+        </LinearLayout>
 
     </LinearLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
