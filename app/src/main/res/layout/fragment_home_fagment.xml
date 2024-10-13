@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".homeFagment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_weight="9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_gravity="center"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dotsIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:padding="0dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="HUES OF HERITAGE"
+
+                android:fontFamily="@font/boldfont"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:padding="4dp"
+                android:text="Embark on a cultural odyssey with Hues of Heritage at IGNUS. Explore our rich legacy of celebrating traditions, stories, and art. Let's paint the spectrum of masterpiece together, showcasing our diverse cultural canvas. Join us in this immersive journey echoing our past, present, and evolving identity"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/font"
+                android:textSize="14dp"
+                android:layout_marginBottom="30dp"/>
+
+            <LinearLayout
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="200dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="@color/color4"
+                    android:layout_marginLeft="10dp"/>
+                <LinearLayout
+                    android:layout_marginRight="10dp"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="0dp"
+                        app:cardCornerRadius="20dp"
+                        android:layout_marginBottom="5dp"
+                        app:cardBackgroundColor="@color/color4"
+                        android:layout_marginLeft="10dp"/>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:layout_height="0dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardBackgroundColor="@color/color4"
+                        android:layout_marginLeft="10dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="Heritage Ambassador Program"
+                android:fontFamily="@font/boldfont"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/font"
+                android:padding="4dp"
+                android:text="In the Heritage Ambassador Program (HAP), our student collaborators function as an extension of Team Ignus, assisting us in promoting our festival and broadening our reach."
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="14dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/register"
+                android:layout_width="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="40dp"
+                android:text="Register for HAP"
+                android:background="@drawable/roundbuttonbgregister"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:padding="4dp"
+                android:text="Social Media Handles"
+                android:fontFamily="@font/boldfont"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginBottom="20dp"
+                app:cardUseCompatPadding="false"
+
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="20dp"
+                >
+
+                <LinearLayout
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:scaleType="fitCenter"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/instagram"
+                        android:layout_weight="1"/>
+
+                    <ImageView
+                        android:scaleType="fitCenter"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/youtube_1384060"
+                        android:layout_weight="1"/>
+
+                    <ImageView
+                        android:scaleType="fitCenter"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/linkedin"
+                        android:layout_weight="1"/>
+
+                    <ImageView
+                        android:scaleType="fitCenter"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/facebok"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

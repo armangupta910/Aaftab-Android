@@ -29,8 +29,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:text="Moksha"
+        android:textSize="35dp"
+        android:text="EVENTSPHERE"
+        android:fontFamily="@font/boldfont"
         android:textStyle="bold"
         android:textAlignment="center"
         android:layout_marginTop="10dp"/>
@@ -68,42 +69,31 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_marginLeft="40dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:text="Register"
-            android:textStyle="bold"/>
-
-        <TextView
+            android:fontFamily="@font/font"
             android:textSize="13dp"
             android:layout_marginLeft="60dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="Username"
             android:textStyle="bold"/>
 
-
-
-            <EditText
-                android:background="@drawable/roundbuttonbglogin"
-                android:textColor="@color/black"
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="39dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="60dp"
-                android:textSize="13dp"
-                android:hint="Name"
-                android:layout_marginRight="60dp"
-                android:layout_marginBottom="5dp"
-
-                android:paddingLeft="15dp"
-                />
-
+        <EditText
+            android:background="@drawable/roundbuttonbglogin"
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:hint="User Name"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="60dp"
+            android:textSize="13dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="15dp"
+            />
 
         <TextView
+            android:fontFamily="@font/font"
             android:textSize="13dp"
             android:layout_marginLeft="60dp"
             android:layout_marginTop="0dp"
@@ -125,34 +115,8 @@
                 android:layout_marginBottom="5dp"
                 android:paddingLeft="15dp"
                 />
-
         <TextView
-            android:textSize="13dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="0dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gender"
-            android:textStyle="bold"/>
-
-            <AutoCompleteTextView
-                android:background="@drawable/roundbuttonbglogin"
-                android:id="@+id/gender"
-                android:layout_width="match_parent"
-                android:layout_height="39dp"
-                android:hint="Gender"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="60dp"
-                android:textSize="13dp"
-                android:drawableEnd="@drawable/custom_show_password"
-                android:layout_marginRight="60dp"
-                android:layout_marginBottom="5dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="10dp"
-                android:inputType="none"
-                />
-
-        <TextView
+            android:fontFamily="@font/font"
             android:textSize="13dp"
             android:layout_marginLeft="60dp"
             android:layout_marginTop="0dp"
@@ -181,6 +145,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/register"
+            android:fontFamily="@font/font"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="Register"
@@ -196,6 +161,7 @@
             android:text="Or Continue With"
             android:textAlignment="center"
             android:textStyle="normal"
+            android:fontFamily="@font/font"
             android:textColor="@color/black"
             android:layout_marginTop="20dp" />
 
@@ -230,11 +196,13 @@
             android:orientation="horizontal">
 
             <TextView
+                android:fontFamily="@font/font"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Already have an account?"/>
 
             <TextView
+                android:fontFamily="@font/font"
                 android:id="@+id/gotoSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

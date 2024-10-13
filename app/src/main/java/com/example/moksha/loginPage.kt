@@ -31,10 +31,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class loginPage : AppCompatActivity() {
     private var isPasswordVisible: Boolean = false
-    private lateinit var auth: FirebaseAuth
-    private lateinit var db: FirebaseFirestore
-    private lateinit var googleSignInClient: GoogleSignInClient
-    private val RC_SIGN_IN = 9001
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,10 +46,6 @@ class loginPage : AppCompatActivity() {
             startActivity(Intent(this,beginOptionPage::class.java))
             finish()
         }
-
-        FirebaseApp.initializeApp(this)
-        auth = FirebaseAuth.getInstance()
-        db = FirebaseFirestore.getInstance()
 
         findViewById<EditText>(R.id.password).setOnTouchListener { _, event ->
             val DRAWABLE_END = 2
@@ -103,104 +96,12 @@ class loginPage : AppCompatActivity() {
             }
         })
 
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestEmail()
-            .build()
-
-        googleSignInClient = GoogleSignIn.getClient(this, gso)
-
-        val googleSignInButton: CardView = findViewById(R.id.googleSignIn)
-        googleSignInButton.setOnClickListener {
-            signOutAndSignInWithGoogle()
-        }
-
-
         //Registering the User
         val signIn: Button = findViewById(R.id.signin)
         signIn.setOnClickListener {
-            val email:String = findViewById<EditText>(R.id.email).text.toString()
-            val password:String = findViewById<EditText>(R.id.password).text.toString()
-
-            var ref = 0
-
-            if(email == ""){
-                ref = 1
-                findViewById<EditText>(R.id.email).setBackgroundResource(R.drawable.wrongpassword)
-            }
-            if(password == ""){
-                ref = 1
-                findViewById<EditText>(R.id.password).setBackgroundResource(R.drawable.wrongpassword)
-            }
-
-            if(ref == 1){
-                Toast.makeText(this,"Please fill up all the fields to proceed",Toast.LENGTH_SHORT).show()
-            }
-
-
-            if(ref == 0){
-                signInUser(email, password)
-            }
-        }
-    }
-
-    private fun signInUser(email: String, password: String) {
-        auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    val user = auth.currentUser
-                    val uid = user?.uid
-
-                    if (uid != null) {
-                        db.collection("users").document(uid)
-                            .get()
-                            .addOnSuccessListener { document ->
-                                if (document != null) {
-                                    val name = document.getString("name")
-                                    val gender = document.getString("gender")
-                                    Toast.makeText(this, "Welcome back, $name!", Toast.LENGTH_SHORT).show()
-                                    // You can navigate to the next screen or perform any desired actions here
-                                } else {
-                                    Toast.makeText(this, "No user data found", Toast.LENGTH_SHORT).show()
-                                }
-                            }
-                            .addOnFailureListener { e ->
-                                Toast.makeText(this, "Failed to retrieve user data: ${e.message}", Toast.LENGTH_SHORT).show()
-                            }
-                    }
-                } else {
-                    Toast.makeText(this, "Sign-in failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                }
-            }
-    }
-
-    private fun signOutAndSignInWithGoogle() {
-        googleSignInClient.signOut().addOnCompleteListener(this) {
-            val signInIntent = googleSignInClient.signInIntent
-            startActivityForResult(signInIntent, RC_SIGN_IN)
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == RC_SIGN_IN) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            try {
-                val account: GoogleSignInAccount? = task.getResult(ApiException::class.java)
-                if (account != null) {
-                    val emailEditText: EditText = findViewById(R.id.email)
-                    emailEditText.setText(account.email)
-                    emailEditText.isFocusable = false
-                    emailEditText.isFocusableInTouchMode = false
-                    emailEditText.isClickable = false
-                    Toast.makeText(this,"Please fill up your other details and then register.",
-                        Toast.LENGTH_SHORT).show()
-                    emailEditText.setTextColor(resources.getColor(R.color.grey))
-                }
-            } catch (e: ApiException) {
-                Toast.makeText(this, "Google sign-in failed: ${e.message}", Toast.LENGTH_SHORT).show()
-                Log.d(ContentValues.TAG,"Google Sign in Failed :- ${e.message}")
-            }
+            //Log In Logic goes here
+            startActivity(Intent(this,getStarted::class.java))
+            finish()
         }
     }
 

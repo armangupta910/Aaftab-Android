@@ -24,6 +24,14 @@ class getStarted : AppCompatActivity() {
         setContentView(R.layout.activity_get_started)
 
 
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        var fragment = homeFagment()
+        fragmentTransaction.replace(R.id.fragment_container, fragment)
+        fragmentTransaction.commit()
+
+
+
         findViewById<ImageView>(R.id.tab1img).setOnClickListener {
             findViewById<ImageView>(R.id.tab1img).visibility = View.GONE
             findViewById<ImageView>(R.id.tab2img).visibility = View.VISIBLE
@@ -35,6 +43,13 @@ class getStarted : AppCompatActivity() {
             findViewById<CardView>(R.id.tab2card).visibility = View.GONE
             findViewById<CardView>(R.id.tab3card).visibility = View.GONE
             findViewById<CardView>(R.id.tab4card).visibility = View.GONE
+
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            var fragment = homeFagment()
+            fragmentTransaction.replace(R.id.fragment_container, fragment)
+            fragmentTransaction.commit()
+
         }
 
         findViewById<ImageView>(R.id.tab2img).setOnClickListener {
@@ -48,6 +63,12 @@ class getStarted : AppCompatActivity() {
             animateCardViewToVisible(findViewById(R.id.tab2card))
             findViewById<CardView>(R.id.tab3card).visibility = View.GONE
             findViewById<CardView>(R.id.tab4card).visibility = View.GONE
+
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            var fragment = eventsFragment()
+            fragmentTransaction.replace(R.id.fragment_container, fragment)
+            fragmentTransaction.commit()
         }
 
         findViewById<ImageView>(R.id.tab3img).setOnClickListener {
@@ -76,35 +97,35 @@ class getStarted : AppCompatActivity() {
             animateCardViewToVisible(findViewById(R.id.tab4card))
         }
 
-        viewPager = findViewById(R.id.viewPager)
-        dotIndicator = findViewById(R.id.dotsIndicator)
-
-        val carouselItems = listOf(
-            CarouselItem(R.drawable.personimage, "Item 1"),
-            CarouselItem(R.drawable.personimage, "Item 2"),
-            CarouselItem(R.drawable.personimage, "Item 3")
-        )
-
-        val adapter = CarouselAdapter(carouselItems)
-        viewPager.adapter = adapter
-
-        // Set up dot indicator
-        dotIndicatorAdapter = DotIndicatorAdapter(carouselItems.size)
-        dotIndicator.adapter = dotIndicatorAdapter
-        dotIndicator.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
-        // Attach Page Change Listener to ViewPager2
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                dotIndicatorAdapter.setSelectedIndex(position)
-            }
-        })
-
-        val space = 40 // Adjust this value to control the space between items
-        viewPager.addItemDecoration(CarouselItemDecoration(space))
-        viewPager.setPageTransformer(CarouselPageTransformer(0.8f))
+//        viewPager = findViewById(R.id.viewPager)
+//        dotIndicator = findViewById(R.id.dotsIndicator)
+//
+//        val carouselItems = listOf(
+//            CarouselItem(R.drawable.personimage, "Item 1"),
+//            CarouselItem(R.drawable.personimage, "Item 2"),
+//            CarouselItem(R.drawable.personimage, "Item 3")
+//        )
+//
+//        val adapter = CarouselAdapter(carouselItems)
+//        viewPager.adapter = adapter
+//
+//        // Set up dot indicator
+//        dotIndicatorAdapter = DotIndicatorAdapter(carouselItems.size)
+//        dotIndicator.adapter = dotIndicatorAdapter
+//        dotIndicator.layoutManager =
+//            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+//
+//        // Attach Page Change Listener to ViewPager2
+//        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+//            override fun onPageSelected(position: Int) {
+//                super.onPageSelected(position)
+//                dotIndicatorAdapter.setSelectedIndex(position)
+//            }
+//        })
+//
+//        val space = 40 // Adjust this value to control the space between items
+//        viewPager.addItemDecoration(CarouselItemDecoration(space))
+//        viewPager.setPageTransformer(CarouselPageTransformer(0.8f))
     }
 
     private fun animateCardViewWidthToZero(cardView: CardView) {
